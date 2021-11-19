@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src="http://mango.viecrew.com/wp-content/uploads/2021/03/mangoooo.png" className="App-logo" alt="logo" />
         <p>
-        Mango react-docker-google-cloud
+        BaNaNe
         </p>
         <a
           className="App-link"
