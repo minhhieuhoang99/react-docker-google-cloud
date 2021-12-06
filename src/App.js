@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={mangoooo} className="App-logo" alt="logo" />
         <p>
-        Hoàng Minh Hiếu
+        Hoàng Minh Hiếu v1.0.0
         </p>
         <a
           className="App-link"
