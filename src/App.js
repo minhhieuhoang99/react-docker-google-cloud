@@ -1,21 +1,22 @@
 import logo from './logo.svg';
+import mangoooo from './mangoooo.png';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="http://mango.viecrew.com/wp-content/uploads/2021/03/mangoooo.png" className="App-logo" alt="logo" />
+        <img src={mangoooo} className="App-logo" alt="logo" />
         <p>
-        BaNaNe
+        Hoàng Minh Hiếu v1.0.0
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="http://mango.viecrew.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Mango viecrew
         </a>
       </header>
     </div>
