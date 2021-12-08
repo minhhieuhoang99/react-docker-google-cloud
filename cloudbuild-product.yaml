@@ -8,4 +8,4 @@ steps:
   args: [ 'push', 'gcr.io/$PROJECT_ID/demo']
   # deploy to cloud run on GKE
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ['run', 'deploy', 'demo-ui', '--image', 'gcr.io/$PROJECT_ID/demo', '--cluster', 'cloudrun-cluster', '--cluster-location', 'asia-southeast1-a', '--namespace', 'default', '--platform', 'gke']
+  args: ['run', 'deploy', 'demo-ui', '--image', 'gcr.io/$PROJECT_ID/demo', '--cluster', 'cloudrun-cicd-cluster', '--cluster-location', 'asia-southeast1-a', '--namespace', 'default', '--platform', 'gke']
