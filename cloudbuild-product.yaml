@@ -29,5 +29,8 @@ steps:
           gcloud container clusters get-credentials "$${CLUSTER}" \
             --project "$${PROJECT}" \
             --zone "$${ZONE}"  
+          kubectl get ns production || kubectl create ns production
+          kubectl apply --namespace production --recursive -f kubernetes/deployments/product
+          kubectl apply --namespace production --recursive -f kubernetes/services
 
 

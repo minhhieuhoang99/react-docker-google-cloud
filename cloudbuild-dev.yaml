@@ -33,5 +33,7 @@ steps:
           gcloud container clusters get-credentials "$${CLUSTER}" \
             --project "$${PROJECT}" \
             --zone "$${ZONE}"  
-
+          kubectl get ns ${BRANCH_NAME} || kubectl create ns ${BRANCH_NAME}
+          kubectl apply --namespace ${BRANCH_NAME} --recursive -f kubernetes/deployments/dev
+          kubectl apply --namespace ${BRANCH_NAME} --recursive -f kubernetes/services
 
