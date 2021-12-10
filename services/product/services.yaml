@@ -8,7 +8,7 @@ spec:
     - port: 443
       targetPort: 443
       protocol: TCP
-      nodePort: 33000
+      nodePort: 32500
   selector:
     role: reactjs
     app: reactjs
