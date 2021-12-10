@@ -32,7 +32,7 @@ steps:
           gcloud container clusters get-credentials "$${CLUSTER}" \
             --project "$${PROJECT}" \
             --zone "$${ZONE}"      
-          sed -i 's|gcr.io/cloud-solutions-images/cicdgcp:.*|gcr.io/$PROJECT_ID/gceme:${SHORT_SHA}|' ./kubernetes/deployments/test/*.yaml         
-          kubectl apply --namespace production --recursive -f kubernetes/deployments/test
-          kubectl apply --namespace production --recursive -f kubernetes/services
+          sed -i 's|gcr.io/cloud-solutions-images/cicdgcp:.*|gcr.io/$PROJECT_ID/gceme:${SHORT_SHA}|' ./deployments/test/*.yaml         
+          kubectl apply --namespace production --recursive -f deployments/test
+          kubectl apply --namespace production --recursive -f services
 

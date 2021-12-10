@@ -33,8 +33,8 @@ steps:
           gcloud container clusters get-credentials "$${CLUSTER}" \
             --project "$${PROJECT}" \
             --zone "$${ZONE}"  
-          sed -i 's|gcr.io/cloud-solutions-images/cicdgcp:.*|gcr.io/$PROJECT_ID/gcme:${BRANCH_NAME}-${SHORT_SHA}|' ./kubernetes/deployments/dev/*.yaml
+          sed -i 's|gcr.io/cloud-solutions-images/cicdgcp:.*|gcr.io/$PROJECT_ID/gcme:${BRANCH_NAME}-${SHORT_SHA}|' ./deployments/dev/*.yaml
           kubectl get ns ${BRANCH_NAME} || kubectl create ns ${BRANCH_NAME}
-          kubectl apply --namespace ${BRANCH_NAME} --recursive -f kubernetes/deployments/dev
-          kubectl apply --namespace ${BRANCH_NAME} --recursive -f kubernetes/services
+          kubectl apply --namespace ${BRANCH_NAME} --recursive -f deployments/dev
+          kubectl apply --namespace ${BRANCH_NAME} --recursive -f services
 
