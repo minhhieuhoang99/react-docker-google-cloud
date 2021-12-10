@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: cicdgcp-reactjs
+spec:
+  type: NodePort
+  ports:
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      nodePort: 32000
+  selector:
+    role: reactjs
+    app: reactjs
