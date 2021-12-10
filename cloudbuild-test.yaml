@@ -34,5 +34,5 @@ steps:
             --zone "$${ZONE}"      
           sed -i 's|gcr.io/cloud-solutions-images/cicdgcp:.*|gcr.io/$PROJECT_ID/gceme:${SHORT_SHA}|' ./deployments/test/*.yaml         
           kubectl apply --namespace production --recursive -f deployments/test
-          kubectl apply --namespace production --recursive -f services
+          kubectl apply --namespace production --recursive -f services/test
 

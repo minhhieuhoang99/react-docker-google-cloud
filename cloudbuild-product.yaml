@@ -32,5 +32,5 @@ steps:
           sed -i 's|gcr.io/cloud-solutions-images/cicdgcp:.*|gcr.io/$PROJECT_ID/gceme:$TAG_NAME|' ./deployments/product/*.yaml     
           kubectl get ns production || kubectl create ns production
           kubectl apply --namespace production --recursive -f deployments/product
-          kubectl apply --namespace production --recursive -f services
+          kubectl apply --namespace production --recursive -f services/product
 
