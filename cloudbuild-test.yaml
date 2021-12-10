@@ -6,7 +6,7 @@ steps:
     args: 
       - '-c'
       - |
-          docker build -t gcr.io/$PROJECT_ID/gceme:${SHORT_SHA} .
+          docker build -t gcr.io/$PROJECT_ID/cicdgcp:${SHORT_SHA} .
 ### Publish
   - id: 'publish'
     name: 'gcr.io/cloud-builders/docker'
@@ -14,7 +14,7 @@ steps:
     args: 
       - '-c'
       - |
-          docker push gcr.io/$PROJECT_ID/gceme:${SHORT_SHA}
+          docker push gcr.io/$PROJECT_ID/cicdgcp:${SHORT_SHA}
 ### Deploy
   - id: 'deploy'
     name: 'gcr.io/cloud-builders/gcloud'
@@ -32,5 +32,7 @@ steps:
           gcloud container clusters get-credentials "$${CLUSTER}" \
             --project "$${PROJECT}" \
             --zone "$${ZONE}"      
-          kubectl get ns ${BRANCH_NAME} || kubectl create ns ${BRANCH_NAME}
+          sed -i 's|gcr.io/cloud-solutions-images/cicdgcp:.*|gcr.io/$PROJECT_ID/gceme:${SHORT_SHA}|' ./deployments/test/*.yaml         
+          kubectl apply --namespace production --recursive -f deployments/test
+          kubectl apply --namespace production --recursive -f services
 
