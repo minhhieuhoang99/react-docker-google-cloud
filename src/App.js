@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import mangoooo from './mangoooo.png';
+import mangoooo from './image/mangoooo.png';
 import './App.css';
+import background from "./image/DSCF0354.jpg";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundPosition:  `center`,backgroundColor:`black`, backgroundRepeat: `repeat` , backgroundSize: `cover` , backgroundImage: `url(${background})` }}>
+     
       <header className="App-header">
         <img src={mangoooo} className="App-logo" alt="logo" />
         <p>
