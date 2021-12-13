@@ -1,0 +1,35 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: cicdgcp-reactjs-canary
+spec:
+  replicas: 2
+  selector:
+      matchLabels:
+          app: cicdgcp
+          role: reactjs
+          env: canary
+  template:
+    metadata:
+      name: reactjs
+      labels:
+        app: cicdgcp
+        role: reactjs
+        env: canary
+    spec:
+      containers:
+      - name: reactjs
+        image: gcr.io/cloud-solutions-images/cicdgcp:1.0.0
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "100m"
+        imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+        command: ["sh", "-c", "app -port=80"]
+        ports:
+        - name: reactjs
+          containerPort: 443
