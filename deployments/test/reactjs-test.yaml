@@ -28,8 +28,8 @@ spec:
         readinessProbe:
           httpGet:
             path: /healthz
-            port: 443
-        command: ["sh", "-c", "app -port=443"]
+            port: 80
+        command: ["sh", "-c", "app -port=80"]
         ports:
         - name: reactjs
           containerPort: 443
