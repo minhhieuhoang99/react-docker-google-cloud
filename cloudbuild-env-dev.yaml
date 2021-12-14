@@ -60,7 +60,7 @@ substitutions:
   _IMAGE_NAME: gcr.io/stable-balancer-329910/react-frontend
   _K8S_YAML_PATH: kubernetes/deployment-dev.yaml
   _DOCKERFILE_NAME: Dockerfile
-  _OUTPUT_BUCKET_PATH: react-docker-google-cloud_cloudbuild/deploy
+  _OUTPUT_BUCKET_PATH: react-docker-google-cloud/deploy
   _K8S_NAMESPACE: dev
   _GKE_CLUSTER: react-cicd-clusters
   _DOCKERFILE_DIR: ''
