@@ -1,21 +1,21 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: cicdgcp-reactjs-canary
+  name: cicdgcp-reactjs-test
 spec:
   replicas: 2
   selector:
       matchLabels:
           app: cicdgcp
           role: reactjs
-          env: canary
+          env: test
   template:
     metadata:
       name: reactjs
       labels:
         app: cicdgcp
         role: reactjs
-        env: canary
+        env: test
     spec:
       containers:
       - name: reactjs

@@ -11,4 +11,4 @@ spec:
       nodePort: 31000
   selector:
     role: reactjs
-    app: reactjs
+    app: cicdgcp
