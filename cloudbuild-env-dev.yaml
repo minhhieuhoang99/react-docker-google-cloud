@@ -58,15 +58,15 @@ options:
 substitutions:
   _K8S_LABELS: ''
   _IMAGE_NAME: gcr.io/stable-balancer-329910/react-frontend
-  _K8S_YAML_PATH: kubernetes/deployment.yaml
+  _K8S_YAML_PATH: kubernetes/deployment-dev.yaml
   _DOCKERFILE_NAME: Dockerfile
-  _OUTPUT_BUCKET_PATH: react_cloudbuild/deploy
-  _K8S_NAMESPACE: default
+  _OUTPUT_BUCKET_PATH: react-docker-google-cloud_cloudbuild/deploy
+  _K8S_NAMESPACE: dev
   _GKE_CLUSTER: react-cicd-clusters
   _DOCKERFILE_DIR: ''
   _GKE_LOCATION: asia-southeast1-a
-  _K8S_ANNOTATIONS: gcb-trigger-id=96032f23-ed85-444e-96ef-17088607b24c
-  _K8S_APP_NAME: react-frontend
+  _K8S_ANNOTATIONS: gcb-trigger-id=4e540edc-95f5-473b-88b9-a9a4fe4e378a
+  _K8S_APP_NAME: react-frontend-dev
 tags:
   - gcp-cloud-build-deploy
   - $_K8S_APP_NAME
