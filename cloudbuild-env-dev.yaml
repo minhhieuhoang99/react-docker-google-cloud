@@ -56,7 +56,6 @@ images:
 options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
-  _ENV_EXPOSE_PORT: 4001
   _K8S_LABELS: ''
   _IMAGE_NAME: gcr.io/stable-balancer-329910/react-frontend
   _K8S_YAML_PATH: kubernetes/deployment-dev.yaml
