@@ -23,7 +23,7 @@ spec:
           imagePullPolicy: IfNotPresent
           name: react-frontend-dev
           ports:
-            - containerPort: 4001
+            - containerPort: 443
               protocol: TCP
 ---
   apiVersion: v1
@@ -35,7 +35,7 @@ spec:
     ports:
       - port: 80
         protocol: TCP
-        targetPort: 4001
+        targetPort: 443
     selector:
       app: react-frontend-dev
     sessionAffinity: None
